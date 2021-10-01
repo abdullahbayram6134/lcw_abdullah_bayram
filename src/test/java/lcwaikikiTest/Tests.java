@@ -54,7 +54,7 @@ public class Tests extends Methods {
 
     public void getPrice() throws InterruptedException
     {
-        detailPrice = elementGetText(By.xpath("//div[@class='col-xs-12 price-area']//div//span[@class='price']"));
+        detailPrice = elementGetText(By.xpath("//div//span[text()='Peşin Fiyatı']/following-sibling::span"));
         clickElement(By.cssSelector("a[data-tracking-label='BedenSecenekleri'][key='1']"));
         clickElement(By.id("pd_add_to_cart"));
         clickElement(By.cssSelector(".header-cart[data-tracking-category='Giris']"));
@@ -71,8 +71,7 @@ kalan adımlar başarılı bir şekilde tamamlanıyor.
 
     public void cart() throws InterruptedException
     {
-        cartPrice = elementGetText(By.className("rd-cart-item-price mb-15"));
-
+        cartPrice = elementGetText(By.cssSelector("div.text-right>span.rd-cart-item-price"));
         if (cartPrice.equals(detailPrice)) {
             System.out.println("Iki fiyat birbirine esittir.");
         }else{
