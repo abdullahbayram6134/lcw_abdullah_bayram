@@ -10,6 +10,7 @@ public class DriverCreate {
     @Before
     public void beforeSenaryo()
     {
+// Tarayıcı sürücüsünün başlatılması.
         System.out.println("-------------------Senaryo Başladı--------------");
         System.setProperty("webdriver.chrome.driver","drivers/chromedriver.exe");
         driver = new ChromeDriver();

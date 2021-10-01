@@ -12,8 +12,8 @@ public class Methods extends DriverCreate {
     {
         WebDriverWait webDriverWait = new WebDriverWait(driver, 10);
         WebElement webElement = webDriverWait.
-                until(ExpectedConditions.presenceOfElementLocated(e));  //until ile dinamik bekletme
-        ((JavascriptExecutor) driver).executeScript(  //scroll yapmak icin js komut
+                until(ExpectedConditions.presenceOfElementLocated(e));  // Until ile dinamik bekletme
+        ((JavascriptExecutor) driver).executeScript(  // Sayfa sonuna scroll yapmak icin js komutu.
                 "arguments[0].scrollIntoView({behavior: 'smooth', block: 'center', inline: 'center'})",
                 webElement);
         return webElement;
